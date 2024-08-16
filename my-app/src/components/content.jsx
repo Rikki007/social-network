@@ -1,7 +1,7 @@
-import back from './back-pic.jpg';
-import ava from './avatar.png';
+import back from '../assets/back-pic.jpg';
+import ava from '../assets/avatar.png';
 
-const Main = () => {
+const Content = () => {
   return (
     <main className="main">
       <div className="back">
@@ -30,4 +30,4 @@ const Main = () => {
   
 }
 
-export default Main;
+export default Content;

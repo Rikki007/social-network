@@ -1,4 +1,4 @@
-import logo from './social.svg';
+import logo from '../assets/social.svg';
 
 const Header = () => {
   return (
