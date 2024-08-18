@@ -1,0 +1,14 @@
+.header {
+  padding: 0 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(155, 253, 221, 0.596);
+  grid-area: header;
+  border-radius: 2rem;
+}
+
+.logo {
+  width: 3rem;
+  border-radius: 50%;
+}
