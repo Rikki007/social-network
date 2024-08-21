@@ -7,7 +7,7 @@ h1, h2, p {
 }
 
 .App {
-  width: 90rem;
+  max-width: 90rem;
   margin: 1rem auto;
   display: grid;
   grid-template-areas: 

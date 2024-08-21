@@ -1,5 +1,5 @@
 import obj from './header.module.css';
-import logo from '../assets/social.svg';
+import logo from './headerAssets/social.svg';
 
 const Header = () => {
   return (

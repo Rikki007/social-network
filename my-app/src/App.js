@@ -1,8 +1,8 @@
 
 import './App.css';
-import Header from './components/header';
-import Content from './components/content';
-import Sidebar from './components/sidebar';
+import Header from './components/header/header';
+import Content from './components/content/content';
+import Sidebar from './components/sidebar/sidebar';
 
 
 function App() {
