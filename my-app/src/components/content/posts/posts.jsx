@@ -10,7 +10,8 @@ const Posts = () => {
         <button className={`${obj.button} ${obj.share}`} type="button">Send</button>
         <button className={`${obj.button} ${obj.remove}`} type="button">Remove</button>
       </div>
-      <Post/>
+      <Post message="Choonga changa" likes="13" dislikes="15" share="5" />
+      <Post message="Veselo jivet" likes="22" dislikes="11" share="8"/>
     </div>
   );
   
