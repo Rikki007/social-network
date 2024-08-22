@@ -7,7 +7,7 @@
 }
 
 .avatar {
-  width: 4.5rem;
+  width: 4rem;
   border: 1px solid black;
   border-radius: 50%;
 }
@@ -17,11 +17,18 @@
 }
 
 .actions {
+  width: 78%;
   display: flex;
   gap: 1.5rem;
+  justify-content: flex-end;
 }
 
 .icon {
-  width: 2rem;
+  width: 1.7rem;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+.icon:hover {
+  scale: 1.1;
 }
