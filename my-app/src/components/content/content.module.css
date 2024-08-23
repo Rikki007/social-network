@@ -1,7 +1,0 @@
-.main {
-  width: 100%;
-  grid-area: main;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
