@@ -24,16 +24,50 @@ const Dialogs = (props) => {
         </ul>
       </div>
       <div className={obj.messages}>
-        <div className={obj.avatar}>
-          <img className={obj.picture} src={avatar} alt="icon" />         
-        </div>
-        <div className={obj.letter}>
-          <div className={obj.lines}>
-            <span className={obj.line__1}></span>
-            <span className={obj.line__2}></span>
+        <div className={obj.blok}>
+          <div className={obj.avatar}>
+            <img className={obj.picture} src={avatar} alt="icon" />         
           </div>
-          <p className={obj.message}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sunt fuga, magni nostrum ipsum in ut dignissimos hic nesciunt soluta doloremque amet, iusto culpa ipsam nam ullam accusantium deserunt odit.</p>
+          <div className={obj.letter}>
+            <div className={obj.lines}>
+              <span className={obj.line__1}></span>
+              <span className={obj.line__2}></span>
+            </div>
+            <p className={obj.message}>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sunt fuga, magni nostrum ipsum in ut dignissimos hic nesciunt soluta doloremque amet, iusto culpa ipsam nam ullam accusantium deserunt odit.
+            </p>
+          </div>
         </div>
+        <div className={obj.blok}>
+          <div className={obj.avatar}>
+            <img className={obj.picture} src={avatar} alt="icon" />         
+          </div>
+          <div className={obj.letter}>
+            <div className={obj.lines}>
+              <span className={obj.line__1}></span>
+              <span className={obj.line__2}></span>
+            </div>
+            <p className={obj.message}>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sunt fuga, magni nostrum ipsum in ut dignissimos hic nesciunt soluta doloremque amet, iusto culpa ipsam nam ullam accusantium deserunt odit.
+            </p>
+          </div>
+        </div>
+        <div className={obj.blok}>
+          <div className={obj.avatar}>
+            <img className={obj.picture} src={avatar} alt="icon" />         
+          </div>
+          <div className={obj.letter}>
+            <div className={obj.lines}>
+              <span className={obj.line__1}></span>
+              <span className={obj.line__2}></span>
+            </div>
+            <p className={obj.message}>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sunt fuga, magni nostrum ipsum in ut dignissimos hic nesciunt soluta doloremque amet, iusto culpa ipsam nam ullam accusantium deserunt odit.
+            </p>
+          </div>
+        </div>
+        
+        
       </div>
     </div>
   );

@@ -14,19 +14,24 @@
 
 .item {
   width: 11rem;
-  padding: 0.1rem 1rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
   list-style-type: none;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.2s;
   border-radius: 1rem;
 }
 
 .item:hover {
   scale: 1.03;
   background-color: rgba(237, 192, 248, 0.596);
+}
+
+.link {
+  padding: 0.1rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: black;
 }
 
 .icon {

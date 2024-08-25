@@ -1,6 +1,7 @@
 import ava from './profileAssets/avatar.png';
 import obj from './profile.module.css'
 
+
 const Profile = () => {
   return (
     <div className={obj.info}>
