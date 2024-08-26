@@ -23,7 +23,7 @@ function App() {
             <Route path='/profile'
             element={<Content/>}/>
 
-            <Route path='/dialogs'
+            <Route path='/dialogs/*'
             element={<Dialogs/>}/>
 
             <Route path='/news'
