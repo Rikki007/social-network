@@ -3,7 +3,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: rgba(155, 253, 221, 0.596);
+  background-color: rgb(155, 253, 221);
   grid-area: header;
   border-radius: 2rem;
 }

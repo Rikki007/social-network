@@ -1,6 +1,6 @@
 .sidebar {
   grid-area: sidebar;
-  background-color: rgba(155, 253, 221, 0.596);
+  background-color: rgb(155, 253, 221);
   border-radius: 2rem;
 }
 
