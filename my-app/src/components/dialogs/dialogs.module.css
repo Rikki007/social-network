@@ -26,28 +26,36 @@
 }
 
 .item {
-  padding: 0.2rem 0.5rem;
-  font-size: 1.3rem;
+  list-style-type: none;
+  font-size: 1.5rem;
+}
+
+.link {
+  padding: 0.2rem 0.8rem;
+  text-decoration: none;
+  color: black;
   cursor: pointer;
-  border: 1px solid transparent;
   border-radius: 0.5rem;
   transition: 0.2s;
 }
 
-.item:hover {
- background-color: rgb(238, 238, 238);
- border: 1px solid black;
+.link:hover {
+  background-color: rgb(237, 192, 248);
 }
 
 .choose {
-  background-color: rgb(250, 252, 132);
+  padding: 0.2rem 0.8rem;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(155, 253, 221);
+  border-radius: 0.5rem;
 }
 
 .messages {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2rem;
   grid-area: messages;
 }
 
