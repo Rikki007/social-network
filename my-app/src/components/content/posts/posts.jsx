@@ -3,9 +3,18 @@ import Post from './postSent/post';
 
 let postData = [
   {id: 1, message: 'Hi, this is my first post!', likes: 13, dislikes: 4, share: 5},
-  {id: 1, message: 'what a wonderful day!', likes: 6, dislikes: 1, share: 8},
-  {id: 1, message: 'third post!', likes: 22, dislikes: 2, share: 1},
+  {id: 2, message: 'what a wonderful day!', likes: 6, dislikes: 1, share: 8},
+  {id: 3, message: 'third post!', likes: 22, dislikes: 2, share: 1},
+  {id: 4, message: 'I finck you fricky and i like you a lot!', likes: 28, dislikes: 3, share: 11},
 ];
+
+let posts = postData.map(post => {
+  return (
+  
+    <Post message={post.message} likes={post.likes} dislikes={post.dislikes} share={post.share}/>
+
+  );
+})
 
 const Posts = () => {
   return (
@@ -17,11 +26,7 @@ const Posts = () => {
         <button className={`${obj.button} ${obj.remove}`} type="button">Remove</button>
       </div>
 
-      <Post message={postData[0].message} likes={postData[0].likes} dislikes={postData[0].dislikes} share={postData[0].share} />
-
-      <Post message={postData[1].message} likes={postData[1].likes} dislikes={postData[1].dislikes} share={postData[1].share} />
-
-      <Post message={postData[2].message} likes={postData[2].likes} dislikes={postData[2].dislikes} share={postData[2].share} />
+      { posts }
 
     </div>
   );
