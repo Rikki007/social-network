@@ -13,7 +13,7 @@
   grid-area: title;
 }
 
-.chat {
+.chatList {
   grid-area: chat;
   border-right: 2px solid black;
 }
@@ -25,56 +25,10 @@
   gap: 1rem;
 }
 
-.item {
-  list-style-type: none;
-  font-size: 1.5rem;
-}
-
-.link {
-  padding: 0.2rem 0.8rem;
-  text-decoration: none;
-  color: black;
-  cursor: pointer;
-  border-radius: 0.5rem;
-  transition: 0.2s;
-}
-
-.link:hover {
-  background-color: rgb(237, 192, 248);
-}
-
-.choose {
-  padding: 0.2rem 0.8rem;
-  text-decoration: none;
-  color: black;
-  background-color: rgb(155, 253, 221);
-  border-radius: 0.5rem;
-}
-
 .messages {
-  padding: 1.5rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   grid-area: messages;
-}
-
-.picture {
-  width: 3rem;
-  border-radius: 50%;
-}
-
-.blok {
-  display: flex;
-  gap: 2rem;
-}
-
-.letter {
-  margin-top: 0.5rem;
-  padding: 1rem;
-  position: relative;
-  top: 1rem;
-  left: 0;
-  border: 1px solid black;
-  border-radius: 0.8rem;
 }

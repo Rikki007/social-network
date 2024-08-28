@@ -1,0 +1,16 @@
+.blok {
+  display: flex;
+  gap: 1rem;
+}
+
+.picture {
+  width: 3rem;
+  border-radius: 50%;
+}
+
+.letter {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.8rem;
+}

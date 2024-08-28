@@ -1,0 +1,25 @@
+.item {
+  list-style-type: none;
+  font-size: 1.5rem;
+}
+
+.link {
+  padding: 0.2rem 0.8rem;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: 0.2s;
+}
+
+.link:hover {
+  background-color: rgb(237, 192, 248);
+}
+
+.choose {
+  padding: 0.2rem 0.8rem;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(155, 253, 221);
+  border-radius: 0.5rem;
+}

@@ -11,7 +11,7 @@ let postData = [
 let posts = postData.map(post => {
   return (
   
-    <Post message={post.message} likes={post.likes} dislikes={post.dislikes} share={post.share}/>
+    <Post key={post.id} message={post.message} likes={post.likes} dislikes={post.dislikes} share={post.share}/>
 
   );
 })
