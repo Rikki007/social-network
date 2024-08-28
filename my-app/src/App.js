@@ -8,6 +8,7 @@ import Music from './components/music/music';
 import Settings from './components/settings/settings';
 import Sidebar from './components/sidebar/sidebar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { dialogsData, messagesData } from './components/data';
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
             element={<Content/>}/>
 
             <Route path='/dialogs/*'
-            element={<Dialogs/>}/>
+            element={<Dialogs dialogsData={dialogsData} messagesData={messagesData}/>}/>
 
             <Route path='/news'
             element={<News/>}/>
