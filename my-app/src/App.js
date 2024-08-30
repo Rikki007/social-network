@@ -8,10 +8,9 @@ import Music from './components/music/music';
 import Settings from './components/settings/settings';
 import Sidebar from './components/sidebar/sidebar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { dialogsData, messagesData } from './components/data';
 
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <div className="App">
@@ -22,10 +21,10 @@ function App() {
           <Routes>
 
             <Route path='/profile'
-            element={<Content/>}/>
+              element={<Content state={props.state.profilePage}/>}/>
 
             <Route path='/dialogs/*'
-            element={<Dialogs dialogsData={dialogsData} messagesData={messagesData}/>}/>
+              element={<Dialogs state={props.state.dialogsPage}/>}/>
 
             <Route path='/news'
             element={<News/>}/>

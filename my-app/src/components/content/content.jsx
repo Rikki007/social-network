@@ -2,12 +2,12 @@ import Profile from './profile/profile';
 import Back from './back/back';
 import Posts from './posts/posts';
 
-const Content = () => {
+const Content = (props) => {
   return (
     <main>
       <Back />
       <Profile />
-      <Posts />
+      <Posts state={props.state.postData}/>
     </main>
   );
   

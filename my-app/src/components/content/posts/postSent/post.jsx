@@ -3,6 +3,7 @@ import avatar from '../../profile/profileAssets/avatar.png';
 import like from './postSentAssets/like.svg';
 import dislike from './postSentAssets/dislike.svg';
 import share from './postSentAssets/share.svg';
+
 const Post = (props) => {
 
   return (

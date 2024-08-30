@@ -6,11 +6,14 @@ import Message from './message/message';
 
 const Dialogs = (props) => {
 
-  let dialogsElements = props.dialogsData.map((dialog) => {
-    return (<DialogItem key={dialog.id} name={dialog.name}/>)
+  let dialogsElements = props.state.dialogsData
+  .map((dialog) => {
+    return (<DialogItem key={dialog.id} id={dialog.id}
+    name={dialog.name}/>)
   });
   
-  let messagesElements = props.messagesData.map((mes) => {
+  let messagesElements = props.state.messagesData
+  .map((mes) => {
     return (<Message key={mes.id} message={mes.text}/>)
   });
 
