@@ -4,6 +4,7 @@ import message from './sidebarAssets/message.svg';
 import news from './sidebarAssets/news.svg';
 import music from './sidebarAssets/music.svg';
 import settings from './sidebarAssets/setting.svg';
+import Friends from './friends/friends'
 import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
@@ -46,6 +47,9 @@ const Sidebar = () => {
           </NavLink>
         </li>
       </ul>
+
+      <Friends />
+
     </aside>
   );
 }

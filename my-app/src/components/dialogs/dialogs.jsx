@@ -14,7 +14,7 @@ const Dialogs = (props) => {
   
   let messagesElements = props.state.messagesData
   .map((mes) => {
-    return (<Message key={mes.id} message={mes.text}/>)
+    return (<Message key={mes.id} isUserMessage={mes.isUserMessage} message={mes.text}/>)
   });
 
   return (

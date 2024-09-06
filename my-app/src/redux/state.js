@@ -21,11 +21,11 @@ const state = {
     ],
     
     messagesData: [
-      {id: 1, text: 'Hi'},
-      {id: 2, text: 'Hello'},
-      {id: 3, text: 'How are you?'},
-      {id: 4, text: 'So-so. You?'},
-      {id: 5, text: 'As well as you.'},
+      {id: 1, isUserMessage: false, text: 'Hi'},
+      {id: 2, isUserMessage: true, text: 'Hello'},
+      {id: 3, isUserMessage: false, text: 'How are you?'},
+      {id: 4, isUserMessage: true, text: 'So-so. You?'},
+      {id: 5, isUserMessage: false, text: 'As well as you.'},
     ],
   },
 

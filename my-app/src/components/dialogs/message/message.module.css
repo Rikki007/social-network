@@ -1,6 +1,13 @@
 .blok {
   display: flex;
   gap: 1rem;
+  justify-content: flex-start;
+}
+
+.blok_right {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
 }
 
 .picture {

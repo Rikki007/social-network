@@ -2,6 +2,9 @@
   grid-area: sidebar;
   background-color: rgb(155, 253, 221);
   border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 .list {

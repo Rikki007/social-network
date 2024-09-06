@@ -19,6 +19,8 @@ function App(props) {
         <div className="app-wrapper">
 
           <Routes>
+            <Route path='/'
+              element={<Content state={props.state.profilePage}/>}/>
 
             <Route path='/profile'
               element={<Content state={props.state.profilePage}/>}/>

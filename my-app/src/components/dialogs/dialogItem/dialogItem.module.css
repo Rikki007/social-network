@@ -4,6 +4,8 @@
 }
 
 .link {
+  display: flex;
+  gap: 1rem;
   padding: 0.2rem 0.8rem;
   text-decoration: none;
   color: black;
@@ -17,9 +19,15 @@
 }
 
 .choose {
+  display: flex;
+  gap: 1rem;
   padding: 0.2rem 0.8rem;
   text-decoration: none;
   color: black;
   background-color: rgb(155, 253, 221);
   border-radius: 0.5rem;
+}
+
+.icon {
+  width: 2rem;
 }

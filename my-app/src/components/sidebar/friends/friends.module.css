@@ -1,0 +1,47 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.title_block {
+  display: flex;
+  gap: 1rem;
+}
+
+.icon {
+  width: 2rem;
+}
+
+.title {
+  font-size: 1.7rem;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  width: 4rem;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.avatar {
+  width: 2rem;
+  height: 2rem;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.name {
+  width: 4rem;
+  overflow: hidden;
+  padding: 0.3rem;
+  text-overflow: ellipsis;
+}
