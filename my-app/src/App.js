@@ -41,7 +41,7 @@ function App(props) {
 
         </div>
 
-        <Sidebar />
+        <Sidebar state={props.state.friends}/>
       </div>
     </BrowserRouter>
     

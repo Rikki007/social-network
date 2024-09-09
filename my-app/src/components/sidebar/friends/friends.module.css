@@ -19,29 +19,8 @@
 }
 
 .list {
-  display: flex;
-  justify-content: space-between;
-}
-
-.item {
-  width: 4rem;
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 0.5rem;
-  align-items: center;
-}
-
-.avatar {
-  width: 2rem;
-  height: 2rem;
-  background-color: black;
-  border-radius: 50%;
-}
-
-.name {
-  width: 4rem;
-  overflow: hidden;
-  padding: 0.3rem;
-  text-overflow: ellipsis;
 }

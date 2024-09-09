@@ -1,8 +1,16 @@
 import obj from './friends.module.css';
+import FriendItem from './friendItem/friendItem';
 import friends from './assets/group.svg';
 
 
-const Friends = () => {
+const Friends = (props) => {
+
+  let friendElements = props.state.friendsData
+  .map((friend) => {
+    return (<FriendItem key={friend.id} id={friend.id}
+    name={friend.userName} avatar={friend.userAvatar} />)
+  })
+
   return (
     <div className={obj.wrapper} >
 
@@ -13,20 +21,7 @@ const Friends = () => {
             
         <ul className={obj.list} >
 
-          <li className={obj.item} >
-            <div className={obj.avatar} ></div>
-            <p className={obj.name} >Yana</p>
-          </li>
-
-          <li className={obj.item} >
-            <div className={obj.avatar} ></div>
-            <p className={obj.name} >Inessa</p>
-          </li>
-
-          <li className={obj.item} >
-            <div className={obj.avatar} ></div>
-            <p className={obj.name} >Vorona</p>
-          </li>
+          { friendElements }
 
         </ul>
 

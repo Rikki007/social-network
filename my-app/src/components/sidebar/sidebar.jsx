@@ -7,7 +7,8 @@ import settings from './sidebarAssets/setting.svg';
 import Friends from './friends/friends'
 import { NavLink } from 'react-router-dom';
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+
   return (
     <aside className={obj.sidebar}>
       <ul className={obj.list}>
@@ -48,7 +49,7 @@ const Sidebar = () => {
         </li>
       </ul>
 
-      <Friends />
+      <Friends state={props.state}/>
 
     </aside>
   );
