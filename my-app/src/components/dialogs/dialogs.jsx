@@ -1,6 +1,8 @@
+import React from 'react';
 import obj from './dialogs.module.css';
 import DialogItem from './dialogItem/dialogItem';
 import Message from './message/message';
+import send from './assets/send.png';
 
 
 
@@ -17,6 +19,16 @@ const Dialogs = (props) => {
     return (<Message key={mes.id} isUserMessage={mes.isUserMessage} message={mes.text}/>)
   });
 
+  const newMessageElement = React.createRef();
+
+  const addMessage = () => {
+    if(newMessageElement.current.value === '') {
+      console.log('nothing to send');
+      return
+    }
+    console.log(newMessageElement.current.value);
+  }
+
   return (
     <div className={obj.wrapper}>
       <h2 className={obj.title}>Dialogs</h2>
@@ -32,6 +44,15 @@ const Dialogs = (props) => {
         { messagesElements }
 
       </div>
+
+      <div className={obj.typing_wrapper}>
+
+        <textarea className={obj.typing_area} ref={newMessageElement}></textarea>
+
+        <img onClick={addMessage} className={obj.send} src={send} alt="icon" />
+
+      </div>
+
     </div>
   );
 }

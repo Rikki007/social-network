@@ -51,4 +51,17 @@ const state = {
 
 }
 
+export const addPost = (postMessage) => {
+  debugger;
+  const newPost = {
+    id: state.profilePage.postData.length + 1,
+    message: postMessage,
+    likes: 0,
+    dislikes: 0,
+    share: 0,
+  }
+
+  state.profilePage.postData.push(newPost);
+};
+
 export default state;

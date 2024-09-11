@@ -4,8 +4,10 @@
   grid-template-areas:
   "title title"
   "chat messages"
+  "chat typingArea"
   ;
-  grid-template-rows: 1fr 9fr;
+  gap: 1rem;
+  grid-template-rows: 1fr 8fr 2.2fr;
   grid-template-columns: 1fr 4fr;
 }
 
@@ -31,4 +33,42 @@
   flex-direction: column;
   gap: 2rem;
   grid-area: messages;
+}
+
+.typing_wrapper {
+  width: 100%;
+  grid-area: typingArea;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.typing_area {
+  width: 90%;
+  height: 100%;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  box-shadow: -2px 4px 11px 3px rgba(34, 60, 80, 0.34);
+  border-radius: 1rem;
+  font-size: 1.5rem;
+}
+
+.send {
+  width: 4rem;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: -2px 4px 11px 3px rgba(34, 60, 80, 0.34);
+  transition: 0.15s;
+}
+
+.send:hover {
+  scale: 1.1;
+  
+}
+
+.send:active {
+  scale: 1;
 }

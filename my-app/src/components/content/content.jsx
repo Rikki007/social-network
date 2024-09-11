@@ -7,7 +7,7 @@ const Content = (props) => {
     <main>
       <Back />
       <Profile />
-      <Posts state={props.state.postData}/>
+      <Posts state={props.state.postData} addPost={props.addPost}/>
     </main>
   );
   
