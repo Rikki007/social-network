@@ -15,14 +15,12 @@ const Posts = (props) => {
   const newPostElement = React.createRef();
 
   const addPost = () => {
-    debugger;
     let text = newPostElement.current.value;
     if(text === '') {
-      console.log('nothing to show');
       return
     }
     props.addPost(text);
-    text = '';
+    newPostElement.current.value = '';
   }
 
   const removeText = () => {

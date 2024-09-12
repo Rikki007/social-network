@@ -4,6 +4,7 @@ import akito from './assets/female_red.png';
 import voldemar from './assets/male_blond.png';
 import ibragim from './assets/male_dag.png';
 import vorona from './assets/male_afro.png';
+import { rerenderEntireTree } from '../render';
 
 const state = {
   profilePage: {
@@ -52,7 +53,6 @@ const state = {
 }
 
 export const addPost = (postMessage) => {
-  debugger;
   const newPost = {
     id: state.profilePage.postData.length + 1,
     message: postMessage,
@@ -60,8 +60,8 @@ export const addPost = (postMessage) => {
     dislikes: 0,
     share: 0,
   }
-
   state.profilePage.postData.push(newPost);
+  rerenderEntireTree(state);
 };
 
 export default state;
