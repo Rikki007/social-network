@@ -14,6 +14,7 @@ const state = {
       {id: 3, message: 'third post!', likes: 22, dislikes: 2, share: 1},
       {id: 4, message: 'I finck you fricky and i like you a lot!', likes: 28, dislikes: 3, share: 11},
     ],
+    newPostText: 'Write something.',
   },
 
   dialogsPage: {
@@ -52,16 +53,34 @@ const state = {
 
 }
 
-export const addPost = (postMessage) => {
+window.state = state;
+
+export const addPost = () => {
+
   const newPost = {
     id: state.profilePage.postData.length + 1,
-    message: postMessage,
+    message: state.profilePage.newPostText,
     likes: 0,
     dislikes: 0,
     share: 0,
   }
+
+  if (newPost.message === '') {
+    console.log('message is empty, write something.');
+    return
+  }
+
   state.profilePage.postData.push(newPost);
+  state.profilePage.newPostText = '';
   rerenderEntireTree(state);
+
+};
+
+export const updateNewPostText = (newText) => {
+
+  state.profilePage.newPostText = (newText);
+  rerenderEntireTree(state);
+
 };
 
 export default state;

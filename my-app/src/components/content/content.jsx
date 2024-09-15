@@ -5,9 +5,15 @@ import Posts from './posts/posts';
 const Content = (props) => {
   return (
     <main>
+
       <Back />
       <Profile />
-      <Posts state={props.state.postData} addPost={props.addPost}/>
+      <Posts postData={props.profilePage.postData}
+        newPostText={props.profilePage.newPostText}
+        addPost={props.addPost}
+        updateNewPostText={props.updateNewPostText}
+      />
+
     </main>
   );
   

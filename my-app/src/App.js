@@ -7,12 +7,12 @@ import News from './components/news/news';
 import Music from './components/music/music';
 import Settings from './components/settings/settings';
 import Sidebar from './components/sidebar/sidebar';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 
 function App(props) {
   return (
-    <BrowserRouter>
+    
       <div className="App">
         <Header />
         
@@ -20,12 +20,19 @@ function App(props) {
 
           <Routes>
             <Route path='/'
-              element={<Content state={props.state.profilePage}/>}/>
+              element={<Content profilePage={props.state.profilePage}
+                addPost={props.addPost}
+                updateNewPostText={props.updateNewPostText}
+              />}
+            />
 
             <Route path='/profile'
               element={<Content
-                state={props.state.profilePage}
-                addPost={props.addPost}/>}/>
+                profilePage={props.state.profilePage}
+                addPost={props.addPost}
+                updateNewPostText={props.updateNewPostText}
+              />}
+            />
 
             <Route path='/dialogs/*'
               element={<Dialogs state={props.state.dialogsPage}/>}/>
@@ -45,7 +52,6 @@ function App(props) {
 
         <Sidebar state={props.state.friends}/>
       </div>
-    </BrowserRouter>
     
   );
 }
