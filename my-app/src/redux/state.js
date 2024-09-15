@@ -4,7 +4,10 @@ import akito from './assets/female_red.png';
 import voldemar from './assets/male_blond.png';
 import ibragim from './assets/male_dag.png';
 import vorona from './assets/male_afro.png';
-import { rerenderEntireTree } from '../render';
+
+let rerenderEntireTree = () => {
+  console.log('state was changed');
+}
 
 const state = {
   profilePage: {
@@ -82,5 +85,9 @@ export const updateNewPostText = (newText) => {
   rerenderEntireTree(state);
 
 };
+
+export const subscribe = (observer) => {
+  rerenderEntireTree = observer;
+}
 
 export default state;
