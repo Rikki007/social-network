@@ -15,6 +15,7 @@ const Posts = (props) => {
   const newPostElement = React.createRef();
 
   const sendPost = () => {
+    
     props.addPost();
   }
 
