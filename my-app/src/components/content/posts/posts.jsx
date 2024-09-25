@@ -16,7 +16,7 @@ const Posts = (props) => {
 
   const sendPost = () => {
     
-    props.addPost();
+    props.dispatch({type: 'ADD-POST'});
   }
 
   const removeText = () => {
@@ -29,7 +29,11 @@ const Posts = (props) => {
 
   const onPostChange = () => {
     let text = newPostElement.current.value;
-    props.updateNewPostText(text);
+    const action = {
+      type: 'UPDATE-NEW-POST-TEXT',
+      newText: text,
+    }
+    props.dispatch(action);
   }
 
   return (

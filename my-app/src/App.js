@@ -20,17 +20,16 @@ function App(props) {
 
           <Routes>
             <Route path='/'
-              element={<Content profilePage={props.state.profilePage}
-                addPost={props.addPost}
-                updateNewPostText={props.updateNewPostText}
+              element={<Content
+                profilePage={props.state.profilePage}
+                dispatch={props.dispatch}
               />}
             />
 
             <Route path='/profile'
               element={<Content
                 profilePage={props.state.profilePage}
-                addPost={props.addPost}
-                updateNewPostText={props.updateNewPostText}
+                dispatch={props.dispatch}
               />}
             />
 

@@ -52,45 +52,42 @@ const store = {
     }
   
   },
-
-  getState() {
-    return this._state
-  },
-
   _callSubscriber() {
     console.log('state was changed');
   },
 
-  addPost() {
-
-    const newPost = {
-      id: this._state.profilePage.postData.length + 1,
-      message: this._state.profilePage.newPostText,
-      likes: 0,
-      dislikes: 0,
-      share: 0,
-    }
-  
-    if (newPost.message === '' || newPost.message === 'Write something.') {
-      console.log('message is empty, write something.');
-      return
-    }
-  
-    this._state.profilePage.postData.push(newPost);
-    this._state.profilePage.newPostText = 'Write something.';
-    this._callSubscriber(this._state);
-  
-  },
-  
-  updateNewPostText(newText) {
-  
-    this._state.profilePage.newPostText = (newText);
-    this._callSubscriber(this._state);
-  
-  },
-  
   subscribe(observer) {
     this._callSubscriber = observer;
+  },
+
+  getState() {
+    return this._state
+  },
+  
+  dispatch(action) {
+    if(action.type === 'ADD-POST') {
+      const newPost = {
+        id: this._state.profilePage.postData.length + 1,
+        message: this._state.profilePage.newPostText,
+        likes: 0,
+        dislikes: 0,
+        share: 0,
+      }
+    
+      if (newPost.message === '' || newPost.message === 'Write something.') {
+        console.log('message is empty, write something.');
+        return
+      }
+    
+      this._state.profilePage.postData.push(newPost);
+      this._state.profilePage.newPostText = 'Write something.';
+      this._callSubscriber(this._state);
+    }
+
+    if (action.type === 'UPDATE-NEW-POST-TEXT') {
+      this._state.profilePage.newPostText = action.newText;
+      this._callSubscriber(this._state);
+    }
   }
 }
 
