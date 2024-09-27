@@ -5,6 +5,9 @@ import voldemar from './assets/male_blond.png';
 import ibragim from './assets/male_dag.png';
 import vorona from './assets/male_afro.png';
 
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
 const store = {
   _state: {
     profilePage: {
@@ -92,5 +95,10 @@ const store = {
 }
 
 export default store;
+
+export const addPostActionCreator = () => ({ type: ADD_POST, });
+
+export const updateNewPostTextActionCreator = (text) => 
+  ({ type: UPDATE_NEW_POST_TEXT, newText: text, });
 
 window.store = store;
