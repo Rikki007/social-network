@@ -7,6 +7,8 @@ import vorona from './assets/male_afro.png';
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+const SEND_MESSAGE = 'SEND-MESSAGE';
 
 const store = {
   _state: {
@@ -39,6 +41,8 @@ const store = {
         {id: 4, isUserMessage: true, text: 'So-so. You?'},
         {id: 5, isUserMessage: false, text: 'As well as you.'},
       ],
+
+      newMessageBody: '',
     },
   
     friends: {
@@ -91,6 +95,20 @@ const store = {
       this._state.profilePage.newPostText = action.newText;
       this._callSubscriber(this._state);
     }
+
+    if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+      this._state.dialogsPage.newMessageBody = action.body;
+      this._callSubscriber(this._state);
+      console.log(this._state.dialogsPage.messagesData)
+      console.log(this._state.dialogsPage.newMessageBody)
+    }
+
+    if (action.type === SEND_MESSAGE) {
+      let body = this._state.dialogsPage.newMessageBody;
+      this._state.dialogsPage.messagesData.push({id: this._state.dialogsPage.messagesData.length + 1, isUserMessage: true, text: body});
+      this._state.dialogsPage.newMessageBody = '';
+      this._callSubscriber(this._state);
+    }
   }
 }
 
@@ -100,5 +118,11 @@ export const addPostActionCreator = () => ({ type: ADD_POST, });
 
 export const updateNewPostTextActionCreator = (text) => 
   ({ type: UPDATE_NEW_POST_TEXT, newText: text, });
+
+export const sendMessageCreator = () => ({ type: SEND_MESSAGE, });
+
+export const updateNewMessageBodyCreator = (body) => 
+  ({ type: UPDATE_NEW_MESSAGE_BODY, body: body, });
+
 
 window.store = store;

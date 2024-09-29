@@ -3,30 +3,38 @@ import obj from './dialogs.module.css';
 import DialogItem from './dialogItem/dialogItem';
 import Message from './message/message';
 import send from './assets/send.png';
+import { sendMessageCreator, updateNewMessageBodyCreator } from "../../redux/state";
 
 
 
 const Dialogs = (props) => {
 
-  let dialogsElements = props.state.dialogsData
+  const state = props.store.getState().dialogsPage;
+
+  let dialogsElements = state.dialogsData
   .map((dialog) => {
     return (<DialogItem key={dialog.id} id={dialog.id}
     name={dialog.name}/>)
   });
   
-  let messagesElements = props.state.messagesData
+  let messagesElements = state.messagesData
   .map((mes) => {
     return (<Message key={mes.id} isUserMessage={mes.isUserMessage} message={mes.text}/>)
   });
 
-  const newMessageElement = React.createRef();
+  let newMessagesBody = state.newMessagesBody;
 
-  const addMessage = () => {
-    if(newMessageElement.current.value === '') {
-      console.log('nothing to send');
-      return
-    }
-    console.log(newMessageElement.current.value);
+  const onSendMessageClick = () => {
+    // if(newMessageElement.current.value === '') {
+    //   console.log('nothing to send');
+    //   return
+    // }
+    props.store.dispatch(sendMessageCreator());
+  }
+
+  const onNewMessageChange = (e) => {
+    const body = e.target.value;
+    props.store.dispatch(updateNewMessageBodyCreator(body))
   }
 
   return (
@@ -46,11 +54,15 @@ const Dialogs = (props) => {
       </div>
 
       <div className={obj.typing_wrapper}>
-
-        <textarea className={obj.typing_area} ref={newMessageElement}></textarea>
-
-        <img onClick={addMessage} className={obj.send} src={send} alt="icon" />
-
+        <div>
+          <textarea className={obj.typing_area}
+                    value={newMessagesBody}
+                    onChange={onNewMessageChange}
+                    placeholder='Enter your massage'></textarea>
+        </div>
+        <div>
+          <img onClick={onSendMessageClick} className={obj.send} src={send} alt="icon" />
+        </div>
       </div>
 
     </div>
