@@ -99,14 +99,12 @@ const store = {
     if (action.type === UPDATE_NEW_MESSAGE_BODY) {
       this._state.dialogsPage.newMessageBody = action.body;
       this._callSubscriber(this._state);
-      console.log(this._state.dialogsPage.messagesData)
-      console.log(this._state.dialogsPage.newMessageBody)
     }
 
     if (action.type === SEND_MESSAGE) {
       let body = this._state.dialogsPage.newMessageBody;
-      this._state.dialogsPage.messagesData.push({id: this._state.dialogsPage.messagesData.length + 1, isUserMessage: true, text: body});
       this._state.dialogsPage.newMessageBody = '';
+      this._state.dialogsPage.messagesData.push({id: this._state.dialogsPage.messagesData.length + 1, isUserMessage: true, text: body});
       this._callSubscriber(this._state);
     }
   }

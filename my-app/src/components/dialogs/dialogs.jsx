@@ -11,18 +11,18 @@ const Dialogs = (props) => {
 
   const state = props.store.getState().dialogsPage;
 
-  let dialogsElements = state.dialogsData
+  const dialogsElements = state.dialogsData
   .map((dialog) => {
     return (<DialogItem key={dialog.id} id={dialog.id}
     name={dialog.name}/>)
   });
   
-  let messagesElements = state.messagesData
+  const messagesElements = state.messagesData
   .map((mes) => {
     return (<Message key={mes.id} isUserMessage={mes.isUserMessage} message={mes.text}/>)
   });
 
-  let newMessagesBody = state.newMessagesBody;
+  let newMessagesBody = state.newMessageBody;
 
   const onSendMessageClick = () => {
     // if(newMessageElement.current.value === '') {
@@ -34,6 +34,7 @@ const Dialogs = (props) => {
 
   const onNewMessageChange = (e) => {
     const body = e.target.value;
+    console.log(body)
     props.store.dispatch(updateNewMessageBodyCreator(body))
   }
 
@@ -54,15 +55,15 @@ const Dialogs = (props) => {
       </div>
 
       <div className={obj.typing_wrapper}>
-        <div>
-          <textarea className={obj.typing_area}
-                    value={newMessagesBody}
-                    onChange={onNewMessageChange}
-                    placeholder='Enter your massage'></textarea>
-        </div>
-        <div>
-          <img onClick={onSendMessageClick} className={obj.send} src={send} alt="icon" />
-        </div>
+        <textarea className={obj.typing_area}
+                  value={newMessagesBody}
+                  onChange={onNewMessageChange}
+                  placeholder='Enter your massage'></textarea>
+
+        <img onClick={onSendMessageClick}
+            className={obj.send}
+            src={send}
+            alt="icon" />
       </div>
 
     </div>
