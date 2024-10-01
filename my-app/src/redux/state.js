@@ -4,6 +4,9 @@ import akito from './assets/female_red.png';
 import voldemar from './assets/male_blond.png';
 import ibragim from './assets/male_dag.png';
 import vorona from './assets/male_afro.png';
+import profileReducer from './profile-reducer';
+import dialogsReducer from './dialogs-reducer';
+import friendsReducer from './friends-reducer';
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
@@ -72,41 +75,12 @@ const store = {
   },
   
   dispatch(action) {
-    if(action.type === 'ADD-POST') {
-      const newPost = {
-        id: this._state.profilePage.postData.length + 1,
-        message: this._state.profilePage.newPostText,
-        likes: 0,
-        dislikes: 0,
-        share: 0,
-      }
+
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+    this._state.friends = friendsReducer(this._state.friends, action);
     
-      if (newPost.message === '' || newPost.message === 'Write something.') {
-        console.log('message is empty, write something.');
-        return
-      }
-    
-      this._state.profilePage.postData.push(newPost);
-      this._state.profilePage.newPostText = 'Write something.';
-      this._callSubscriber(this._state);
-    }
-
-    if (action.type === 'UPDATE-NEW-POST-TEXT') {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubscriber(this._state);
-    }
-
-    if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-      this._state.dialogsPage.newMessageBody = action.body;
-      this._callSubscriber(this._state);
-    }
-
-    if (action.type === SEND_MESSAGE) {
-      let body = this._state.dialogsPage.newMessageBody;
-      this._state.dialogsPage.newMessageBody = '';
-      this._state.dialogsPage.messagesData.push({id: this._state.dialogsPage.messagesData.length + 1, isUserMessage: true, text: body});
-      this._callSubscriber(this._state);
-    }
+    this._callSubscriber(this._state);
   }
 }
 
