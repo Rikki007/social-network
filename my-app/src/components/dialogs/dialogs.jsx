@@ -9,7 +9,7 @@ import { sendMessageCreator, updateNewMessageBodyCreator } from "../../redux/dia
 
 const Dialogs = (props) => {
 
-  const state = props.store.getState().dialogsPage;
+  const state = props.dialogsPage;
 
   const dialogsElements = state.dialogsData
   .map((dialog) => {
@@ -29,13 +29,12 @@ const Dialogs = (props) => {
     //   console.log('nothing to send');
     //   return
     // }
-    props.store.dispatch(sendMessageCreator());
+    props.sendMessage();
   }
 
   const onNewMessageChange = (e) => {
     const body = e.target.value;
-    console.log(body)
-    props.store.dispatch(updateNewMessageBodyCreator(body))
+    props.updateNewMessageBody(body)
   }
 
   return (

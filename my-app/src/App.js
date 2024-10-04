@@ -2,7 +2,7 @@
 import './App.css';
 import Header from './components/header/header';
 import Content from './components/content/content';
-import Dialogs from './components/dialogs/dialogs';
+import DialogsContainer from './components/dialogs/dialogsContainer';
 import News from './components/news/news';
 import Music from './components/music/music';
 import Settings from './components/settings/settings';
@@ -11,6 +11,7 @@ import { Routes, Route } from 'react-router-dom';
 
 
 function App(props) {
+
   return (
     
       <div className="App">
@@ -20,21 +21,15 @@ function App(props) {
 
           <Routes>
             <Route path='/'
-              element={<Content
-                profilePage={props.state.profilePage}
-                dispatch={props.dispatch}
-              />}
+              element={<Content store={props.store} />}
             />
 
             <Route path='/profile'
-              element={<Content
-                profilePage={props.state.profilePage}
-                dispatch={props.dispatch}
-              />}
+              element={<Content store={props.store} />}
             />
 
             <Route path='/dialogs/*'
-              element={<Dialogs store={props.store}/>}/>
+              element={<DialogsContainer store={props.store}/>}/>
 
             <Route path='/news'
             element={<News/>}/>

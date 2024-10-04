@@ -1,6 +1,6 @@
 import Profile from './profile/profile';
 import Back from './back/back';
-import Posts from './posts/posts';
+import PostsContainer from './posts/postsContainer';
 
 const Content = (props) => {
   return (
@@ -8,11 +8,7 @@ const Content = (props) => {
 
       <Back />
       <Profile />
-      <Posts
-        postData={props.profilePage.postData}
-        newPostText={props.profilePage.newPostText}
-        dispatch={props.dispatch}
-      />
+      <PostsContainer store={props.store} />
 
     </main>
   );
